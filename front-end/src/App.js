@@ -45,21 +45,20 @@ const WebcamCapture = () => {
   const sendRequest = async (imgs) => {
     if (imgs) {
       try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/todos/1', {
+        const response = await fetch('https://sign-language-recognition-backend-liart.vercel.app/upload', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
           },
-          //body: JSON.stringify({ image: imgs }),
+          body: JSON.stringify({ image: imgs })
         });
         
-        //const resp = await response.json()
+        const resp = await response.json()
 
-        const dt = ['Hello', 'I love you', 'Yes!']
 
 
         if (true) {
-          setResponseOutput(dt[Math.floor(Math.random() * 3)])
+          setResponseOutput(resp)
         }
         
         
